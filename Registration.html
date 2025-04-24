@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Registration Form</title>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form onsubmit="return checkPasswords()">
+
+    <label>Name:</label>
+    <input type="text" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" required><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="pass" required><br><br>
+
+    <label>Confirm Password:</label>
+    <input type="password" id="confirm" required><br><br>
+
+  
+    <label>User Role:</label>
+    <select required>
+      <option value="">Select</option>
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+      <option value="admin">Admin</option>
+    </select><br><br>
+
+  
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" required> Male<br>
+    <input type="radio" name="gender"> Female<br>
+    <input type="radio" name="gender"> Other<br><br>
+
+  
+    <input type="checkbox" required> I agree to the terms<br><br>
+
+  
+    <button type="submit">Register</button>
+
+  </form>
+
+  <script>
+    function checkPasswords() {
+      var p = document.getElementById("pass").value;
+      var c = document.getElementById("confirm").value;
+      if (p !== c) {
+        alert("Passwords do not match");
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>
